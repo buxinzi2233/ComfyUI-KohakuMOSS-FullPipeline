@@ -1,0 +1,76 @@
+{
+  "1": {
+    "class_type": "KohakuMOSSFullPipelineLoader",
+    "inputs": {
+      "unet_name": "moss_image_base_fp16_fixed.safetensors",
+      "text_encoder_name": "qwen3.5_9b_int8_convrot.safetensors",
+      "vae_name": "flux2-vae_small.safetensors",
+      "precision": "auto",
+      "memory_profile": "auto",
+      "trainer_root": "",
+      "python_path": "",
+      "tune": "off",
+      "adapter_mode": "bypass",
+      "text_memory": "auto",
+      "fp16_fix": "none",
+      "fp16_scale": 0.0625,
+      "cuda_home": "",
+      "worker_ram_gib": 12.0,
+      "cxx": "",
+      "vae_precision": "auto",
+      "vae_memory": "auto"
+    }
+  },
+  "2": {
+    "class_type": "KohakuMOSSFullPipelineLoRA",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "lora_name": "example.safetensors",
+      "strength": 1.0
+    }
+  },
+  "3": {
+    "class_type": "KohakuMOSSFullPipelineSampler",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "positive": "A painterly portrait of an adult woman in a blue coat, soft daylight, detailed brushwork.",
+      "negative": "",
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1,
+      "seed": 0,
+      "steps": 50,
+      "cfg": 3.0,
+      "shift": 5.0,
+      "cfg_mode": "packed",
+      "skip_layers": "default",
+      "keep_loaded": true,
+      "force_run": true
+    }
+  },
+  "4": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "3",
+        0
+      ],
+      "filename_prefix": "KohakuMOSS-FullPipeline"
+    }
+  },
+  "5": {
+    "class_type": "PreviewAny",
+    "inputs": {
+      "source": [
+        "3",
+        1
+      ]
+    }
+  }
+}

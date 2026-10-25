@@ -1,0 +1,11 @@
+[project]
+name = "comfyui-kohakumoss-fullpipeline"
+version = "0.1.0"
+description = "ComfyUI nodes running the complete KohakuMossTrainer inference pipeline in its own Python environment."
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/buxinzi2233/ComfyUI-KohakuMOSS-FullPipeline"
+"Inference Source" = "https://github.com/KohakuBlueleaf/KohakuMossTrainer"
+

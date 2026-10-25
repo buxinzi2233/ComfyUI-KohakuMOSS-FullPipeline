@@ -1,0 +1,17 @@
+ComfyUI KohakuMOSS Full Pipeline
+Copyright 2026 buxinzi2233
+
+The ComfyUI integration and local worker protocol are adapted from this
+project's earlier ComfyUI-KohakuMOSS-Trainer integration.
+
+Inference is executed through the public MossPipeline API of a separately
+installed KohakuMossTrainer checkout. This repository does not vendor the
+trainer, model weights, GPU kernels, or ComfyUI-MOSS-Precompile source.
+
+KohakuMossTrainer: Copyright 2026 Shih-Ying Yeh (KohakuBlueLeaf) and contributors.
+Upstream: https://github.com/KohakuBlueleaf/KohakuMossTrainer
+License: KohakuMoss License 1.0 (Apache-2.0 with a naming requirement).
+The upstream license text is included as LICENSE. The Kohaku name is preserved.
+
+The separately installed trainer and model weights retain their own licenses.
+
